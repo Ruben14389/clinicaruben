@@ -350,6 +350,11 @@ return [
                     'icon' => 'fas fa-fw fa-user',
                 ],
                 [
+                    'text' => 'Enfermera',
+                    'url'  => 'mostrar_enfermera',
+                    'icon' => 'fas fa-fw fa-user',
+                ],
+                [
                     'text' => 'Paciente',
                     'url'  => 'mostrar_paciente',
                     'icon' => 'fas fa-fw fa-user',
@@ -406,6 +411,41 @@ return [
                     'url'  => 'mi-horario',
                     'icon' => 'fas fa-fw fa-user',
                 ], 
+            ],
+        ],
+        [
+            'text'    => 'Gestion Cuidados Int...',
+           // 'icon'    => 'fas fa-fw fa-book',
+           // 'can' => 'gestion academica',
+            'submenu' => [ 
+                [
+                    'text' => 'Registrar Paciente',
+                    'url'  => '/uci/create',
+                    'icon' => 'fas fa-fw fa-user',
+                ], 
+                [
+                    'text' => 'Pacientes',
+                    'url'  => '/uci',
+                    'icon' => 'fas fa-fw fa-user',
+                ], 
+            ],
+        ],
+        [
+            'text'    => 'Gestion Internación',
+           // 'icon'    => 'fas fa-fw fa-book',
+           // 'can' => 'gestion academica',
+            'submenu' => [
+                
+                [
+                    'text' => 'Registrar Paciente',
+                    'url'  => '/internacion/create',
+                    'icon' => 'fas fa-fw fa-user',
+                ], 
+                [
+                    'text' => 'Pacientes',
+                    'url'  => '/internacion',
+                    'icon' => 'fas fa-fw fa-user',
+                ],  
             ],
         ],
         

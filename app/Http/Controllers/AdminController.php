@@ -199,8 +199,14 @@ class AdminController extends Controller
         return view('admin.medico.mostrar_medico', ['medico' => $medico]);
     }
 
+    public function mostrar_enfermera(){
+        $enfermera = UsuarioRol::where('rol_id', 3)->get(); 
+        return view('admin.enfermera.mostrar_enfermera', ['enfermera' => $enfermera]);
+    }
+
+
    public function mostrar_paciente(){
-        $paciente = UsuarioRol::where('rol_id', 3)->get(); 
+        $paciente = UsuarioRol::where('rol_id', 4)->get(); 
         return view('admin.paciente.mostrar_paciente', ['paciente' => $paciente]);
     }
 //-------------------------------------------------------------------------------

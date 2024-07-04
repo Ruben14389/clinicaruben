@@ -32,6 +32,7 @@ Route::post('/editar_Usuario/{id}', [AdminController::class, 'editar_Usuario']);
 Route::delete('/borrar_Usuario/{id}', [AdminController::class, 'borrar_Usuario']);
 
 Route::get('/mostrar_medico', [AdminController::class, 'mostrar_medico']);
+Route::get('/mostrar_enfermera', [AdminController::class, 'mostrar_enfermera']);
 Route::get('/mostrar_paciente', [AdminController::class, 'mostrar_paciente']);
 
 Route::get('/rol', [AdminController::class, 'rol']);
@@ -68,3 +69,14 @@ Route::delete('/medico-horario-destroy/{id}',[HorarioController::class,'destroyM
 Route::delete('/destroy-turno/{id}',[HorarioController::class,'destroyTurno'])->name('turno.destroyTurno');
 
 Route::get('/ver_farmacia',[AdminController::class,'ver_farmacia']);
+
+use App\Http\Controllers\UciController;
+
+Route::get('/uci', [UciController::class, 'index'])->middleware(['auth', 'verified'])->name('uci.index');
+Route::get('/uci/create', [UciController::class, 'create'])->middleware(['auth', 'verified'])->name('uci.create');
+Route::get('/uci/{uci}/edit', [UciController::class, 'edit'])->middleware(['auth', 'verified'])->name('uci.edit');
+
+use App\Http\Controllers\InternacionController;
+Route::get('/internacion', [InternacionController::class, 'index'])->middleware(['auth', 'verified'])->name('internacion.index');
+Route::get('/internacion/create', [InternacionController::class, 'create'])->middleware(['auth', 'verified'])->name('internacion.create');
+Route::get('/internacion/{internacion}/edit', [InternacionController::class, 'edit'])->middleware(['auth', 'verified'])->name('internacion.edit');
